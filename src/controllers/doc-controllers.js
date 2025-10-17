@@ -2,13 +2,13 @@ import { docService } from "../services/doc-services.js"
 
 export const docController = async(req,res)=>{
     try {
-        const {prompts} = req.body
+        const {content} = req.body
         const doc = req.file.buffer.toString("base64")
-        if (!prompts || typeof prompts != "string" || !doc){
+        if (!content || typeof content != "string" || !doc){
             res.status(400).json({status:"failed",message:"Data tidak valid, isi prompt dan dokumen"})
         }
         const mimeType = req.file.mimetype
-        const response = await docService({prompts,doc,mimeType})
+        const response = await docService({content,doc,mimeType})
         res.status(200).json({
             result:response.text,
             status:"success",

@@ -2,13 +2,13 @@ import { imageService } from "../services/image-services.js";
 
 export const imageController = async(req,res)=>{
     try {
-        const {prompts} = req.body
+        const {content} = req.body
         const image = req.file.buffer.toString("base64")
-        if (!prompts || typeof prompts != "string" || !image){
+        if (!content || typeof content != "string" || !image){
             res.status(400).json({status:"failed",message:"Data tidak valid, isi prompt dan gambar"})
         }
         const mimeType = req.file.mimetype
-        const response = await imageService({prompts,image,mimeType})
+        const response = await imageService({content,image,mimeType})
         res.status(200).json({
             result:response.text,
             status:"success",

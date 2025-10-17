@@ -1,11 +1,13 @@
 import {ai} from "../config/ai.js"
 
-export const textService = async({prompts})=>{
+export const textService = async({content})=>{
+    
     const response = await ai.models.generateContent({
         model:process.env.GEMINI_MODEL,
-        contents:prompts,
+        contents:[content],
         
     })
+    
     return response
 }
 
