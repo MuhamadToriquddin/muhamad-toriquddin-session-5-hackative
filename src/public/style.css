@@ -64,11 +64,11 @@ h1 {
 
 .message.user {
   background-color: #d1e7ff;
-  display: inline-block;   /* penting */
-  max-width: 80%;          /* batasi lebar bubble */
+  display: inline-block;   
+  max-width: 80%;          
   text-align: right;
-  word-wrap: break-word;   /* wrap kata panjang */
-  word-break: break-word;  /* wrap kata panjang di browser lama */
+  word-wrap: break-word;   
+  word-break: break-word;  
 }
 
 .item-file {
@@ -86,12 +86,18 @@ h1 {
   text-align: left;
 }
 
-input[type="text"] {
+/* Changed to #user-input to style the textarea */
+#user-input {
   flex: 1;
   padding: 10px;
   border-radius: 20px;
   border: 1px solid #ccc;
   font-size: 16px;
+  font-family: Arial, sans-serif; /* Match body font */
+  resize: none; /* Disable manual resizing */
+  overflow-y: hidden; /* Hide scrollbar until needed */
+  box-sizing: border-box; /* Consistent padding and border behavior */
+  line-height: 1.5; /* Improve readability */
 }
 
 button {

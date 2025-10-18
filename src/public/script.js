@@ -32,6 +32,23 @@ form.addEventListener('submit', function (e) {
   // reset form
   input.value = '';
   clearAttachments()
+  // Reset textarea height
+  input.style.height = 'auto';
+});
+
+// Auto-resize textarea
+input.addEventListener('input', () => {
+  input.style.height = 'auto'; // Reset height to shrink if text is deleted
+  const maxHeight = 200; // Max height in pixels
+  const newHeight = Math.min(input.scrollHeight, maxHeight);
+  input.style.height = `${newHeight}px`;
+
+  // Show scrollbar if content exceeds max height
+  if (input.scrollHeight > maxHeight) {
+    input.style.overflowY = 'auto';
+  } else {
+    input.style.overflowY = 'hidden';
+  }
 });
 
 function checkDisabled(){
@@ -210,4 +227,3 @@ async function fetchData(userMessage, fileInput) {
 
   return response;
 }
-
