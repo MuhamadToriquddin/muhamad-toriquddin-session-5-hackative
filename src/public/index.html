@@ -8,13 +8,18 @@
 </head>
 <body>
   <div class="container">
-    <h1>TQ AI Chatbot</h1>
+    <h1>Chatbot Si Paling HRD</h1>
     <div id="chat-box" class="chat-box">
       <div id="chat-wrapper" class="chat-wrapper"></div>
     </div>
-    <form id="chat-form">
-      <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required />
-      <button type="submit">Send</button>
+    <form id="chat-form"  enctype="multipart/form-data">
+      <div id="attach-file-wrapper" class="attach-file-wrapper"></div>
+      <div id="input-wrapper" class="input-wrapper">
+        <label for="file-input" class="file-label" title="Attach file (doc/audio/image)">+</label>
+        <input type="file" id="file-input" name="file" accept="image/*,audio/*,application/pdf,.doc,.docx,text/plain" required/>
+        <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required />
+      <button type="submit" id="btn-submit">Send</button>
+      </div>
     </form>
   </div>
   <script src="script.js"></script>

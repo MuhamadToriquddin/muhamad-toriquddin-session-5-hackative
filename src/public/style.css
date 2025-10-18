@@ -29,6 +29,7 @@ h1 {
   margin-bottom: 10px;
 }
 
+
 .chat-wrapper{
   width: 100%;
   height: fit-content;
@@ -40,6 +41,7 @@ h1 {
   width: 100%;
   height: fit-content;
   display: flex;
+  
 }
 
 .message-wrapper.user{
@@ -55,24 +57,33 @@ h1 {
   padding: 8px 12px;
   border-radius: 20px;
   max-width: 80%;
+  overflow-y: visible;
   display: inline-block;
+  white-space: pre-wrap;
 }
 
 .message.user {
   background-color: #d1e7ff;
-  float: right;
+  display: inline-block;   /* penting */
+  max-width: 80%;          /* batasi lebar bubble */
   text-align: right;
+  word-wrap: break-word;   /* wrap kata panjang */
+  word-break: break-word;  /* wrap kata panjang di browser lama */
+}
+
+.item-file {
+  background-color: #e9f1fb;
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: inline-block;       /* menyesuaikan lebar teks */
+  max-width: 100%;             /* tidak melebihi bubble */
+  word-wrap: break-word;       /* wrap kata panjang */
 }
 
 .message.bot {
   background-color: #dff6dd;
   float: left;
   text-align: left;
-}
-
-form {
-  display: flex;
-  gap: 10px;
 }
 
 input[type="text"] {
@@ -95,4 +106,102 @@ button {
 
 button:hover {
   background-color: #0b5ed7;
+}
+
+/* Hide the default file input */
+#file-input {
+  display: none;
+}
+
+/* Style the label to look like a button */
+.file-label {
+  color: gray;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 2em;  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  transition: background-color 0.3s;
+}
+
+.file-label:hover {
+  background-color: gainsboro;
+}
+
+/* style file item */
+.item{
+  background-color: ghostwhite;
+  border: gray;
+  border-width: 2px;
+  border-radius: 6px;
+  height: fit-content;
+  min-width: 200px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 6px;
+}
+.desc-wrapper{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.format-wrapper{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.name-item{
+  font-size: 16px;
+  font-weight: 400;
+}
+.del-button-item{
+  font-size: 10px;
+  background-color: ghostwhite;
+  color: red;
+}
+.del-button-item:hover{
+  font-size: 10px;
+  background-color: gainsboro;
+  color: red;
+}
+.format-item{
+  font-size: 16px;
+  font-weight: 400;
+}
+.size-item{
+  font-size: 12px;
+}
+
+/* style form */
+form{
+  width: 100%;
+  height: fit-content;
+  gap: 10px;
+}
+
+.attach-file-wrapper{
+  width: 100%;
+  padding: 5px;
+}
+
+.attach-file-item{
+  padding: 5px;
+  min-width: 100px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.input-wrapper{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  gap: 10px;
+  align-items: center;
 }

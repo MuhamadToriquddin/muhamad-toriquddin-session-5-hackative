@@ -19,7 +19,7 @@ app.use("/generate-text",textRoutes)
 
 // app.use("/generate-from-image",imageRoutes)
 
-// app.use("/generate-from-document",docRoutes)
+app.use("/generate-from-document",docRoutes)
 
 // app.use("/generate-from-audio",audioRoutes)
 
